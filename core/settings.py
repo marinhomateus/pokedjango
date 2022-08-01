@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-#r&ba_5xaft2ow)a+f@a7!49+)3_3r&tp-%=fkpdzxjqnn9@wx"
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -133,9 +133,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 django_heroku.settings(locals())
 
-AWS_ACCESS_KEY_ID = "AKIA4QDBZ6235R7KCXCX"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_STORAGE_BUCKET_NAME = "poke-django"
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
